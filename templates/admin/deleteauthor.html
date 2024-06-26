@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Delete Author  {{ author.name}}</h1>
+
+<form method="post" action="">
+    {% csrf_token %}
+
+    <h2>Are you sure</h2>
+
+    <input type="submit" value="confirm">
+
+
+
+</form>
+{% endblock %}

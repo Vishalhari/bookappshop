@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container">
+    <h1>List Author</h1>
+    {% if request.session.username == 'admin' %}
+    {% endif %}
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Author Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for author in authors %}
+          <tr>
+            <td>{{ author.name }}</td>
+            <td>
+                 <a href="editauthor/{{ author.id }}">
+                    <button type="button" class="btn btn-primary">Edit</button>
+                </a>
+
+                <a href="deleteauthor/{{ author.id }}">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </a>
+            </td>
+          </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+    {% endblock %}

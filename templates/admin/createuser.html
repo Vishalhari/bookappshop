@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Create Users</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" class="btn btn-primary" value="Create ">
+
+</form>
+{% endblock %}

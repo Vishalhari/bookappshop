@@ -1,0 +1,71 @@
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'userdashboard' %}">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Books</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'booklist' %}">
+              <i class="bi bi-circle"></i><span>Book list</span>
+            </a>
+              <li>
+            <a href="{% url 'addbook' %}">
+              <i class="bi bi-circle"></i><span>Create Book</span>
+            </a>
+          </li>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav1" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Author</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav1" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'listauthor' %}">
+              <i class="bi bi-circle"></i><span>Author list</span>
+            </a>
+              <li>
+            <a href="{% url 'addauthor' %}">
+              <i class="bi bi-circle"></i><span>Create Author</span>
+            </a>
+          </li>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+            <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Accounts</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{% url 'userslist' %}">
+              <i class="bi bi-circle"></i><span>Users list</span>
+            </a>
+              <li>
+            <a href="{% url 'userscreate' %}">
+              <i class="bi bi-circle"></i><span>Create Users</span>
+            </a>
+          </li>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+
+
+
+  </aside><!-- End Sidebar-->

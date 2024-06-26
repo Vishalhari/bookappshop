@@ -1,0 +1,56 @@
+{% extends 'layoutsuser.html' %}
+{% load static %}
+
+{% block content %}
+
+<link href="{% static 'assets/styles/productlist.css' %}" rel="stylesheet">
+
+<script src="{% static 'assets/script/script.js' %}"></script>
+
+
+
+
+<div class="container">
+
+    <div class="row">
+        {% for book in books %}
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#">
+                        <img class="pic-1" src="{{ book.image.url }}">
+                        <img class="pic-2" src="{{ book.image.url }}">
+                    </a>
+                    <ul class="social">
+                        <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+
+
+                </div>
+
+                <div class="product-content">
+                    <h3 class="title"><a href="#">{{ book.title }}</a></h3>
+                    <p>{{ book.author }}</p>
+                    <div class="price">${{ book.price }}
+<!--                        <span>$20.00</span>-->
+                    </div>
+                    <a class="add-to-cart" href="{% url 'addtocart' book.id %}">+ Add To Cart</a>
+
+                    <form method="post" class="add-to-cartfrm" action="{% url 'addtocart' book.id %}">
+                         {% csrf_token %}
+                        <input type="hidden" name="bookid" value="{{ book.id }}">
+                        <input type="hidden" name="quantity" value="1">
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+<hr>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1> Book Details</h1>
+
+{{ books.title}}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Book Title</label>
+    <input type="email" class="form-control" value="{{ books.title}}">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Book Price</label>
+    <input type="email" class="form-control" value="{{ books.price}}">
+  </div>
+
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Book Author</label>
+    <input type="email" class="form-control" value="{{ books.author}}">
+  </div>
+
+<br>
+
+
+  <div class="form-group">
+    <img class="img-fluid" src="{{ books.image.url }}" style="height:100px;">
+
+  </div>
+
+
+
+
+{% endblock %}
